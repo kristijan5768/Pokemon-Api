@@ -8,18 +8,95 @@
 
 body {
     padding: 10px;
+    font-family: 'Mynerve', cursive;
+    background: linear-gradient(to right, #E4E5E6, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 h1 {
     text-align: center;
     margin-bottom: 50px;
+    font-size: 64px;
 }
+
+
 
 .buttonContainer {
     display: flex;
     justify-content: space-around;
     margin-bottom: 50px;
+    
 }
+
+#prev, #next {
+display: inline-block;
+  background-color: darkslategrey;
+  padding: 20px;
+  width: 200px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  font-size: 28px;
+  cursor: pointer; 
+  margin: 5px; 
+}
+      
+
+#search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  #search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  #search-button {
+    display: inline-block;
+    background-color: darkslategrey;
+    padding: 10px;
+    width: 100px;
+    color: #ffffff;
+    text-align: center;
+    border: 4px double #cccccc;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer; 
+    margin: 5px; 
+  }
+  
+
+  #pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  #pokemon-container div {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: strong;
+    font-size: 20px;
+  }
+  
+  #pokemon-container img {
+    max-width: 100%;
+    height: 140px;
+  }
+  
 
 .pokemonsContainer {
     display: flex;
@@ -28,8 +105,8 @@ h1 {
 }
 
 .wrapper {
-    width: 20%;
-    padding: 20px;
+    width: 25%;
+    padding: 25px;
 }
 
 .pokemon {
@@ -39,4 +116,5 @@ h1 {
     align-items: center;
     box-shadow: 6px 6px 20px 2px rgba(0, 0, 0, 0.6);
     padding: 20px 0;
+    font-size: 32px;
 }

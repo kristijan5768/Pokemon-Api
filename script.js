@@ -63,5 +63,42 @@ async function initPokemons(url) {
     prevButton.disabled = true;
   }
 }
+const searchButton = document.getElementById("search-button");
+const searchInput = document.getElementById("search-input");
+const pokemonContainer = document.getElementById("pokemon-container");
+
+searchButton.addEventListener("click", () => {
+  const pokemonName = searchInput.value.toLowerCase().trim();
+  if (!pokemonName) {
+    alert("Please enter a Pokemon name.");
+    return;
+  }
+
+  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+    .then((response) => response.json())
+    .then((pokemon) => {
+      let abilitiesHTML = "";
+      pokemon.abilities.forEach((ability) => {
+        abilitiesHTML += `<li>${ability.ability.name}</li>`;
+      });
+
+      const pokemonHTML = `
+				<div>
+					<h2>${pokemon.name}</h2>
+					<img src="${pokemon.sprites.front_default}">
+					<p>Height: ${pokemon.height}</p>
+					<p>Weight: ${pokemon.weight}</p>
+					<ul>Abilities:
+						${abilitiesHTML}
+					</ul>
+				</div>
+			`;
+      pokemonContainer.innerHTML = pokemonHTML;
+    })
+    .catch((error) => {
+      alert("Pokemon not found.");
+      console.error(error);
+    });
+});
 
 initPokemons("https://pokeapi.co/api/v2/pokemon");
